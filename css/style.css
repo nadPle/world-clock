@@ -1,0 +1,23 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    356deg,
+    rgba(255, 190, 183, 1) 23%,
+    rgba(171, 134, 167, 1) 80%
+  );
+  background-attachment: fixed;
+}
+
+footer {
+  text-align: center;
+}
+
+.main-container {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  margin: 50px auto;
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
