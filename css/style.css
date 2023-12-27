@@ -1,23 +1,120 @@
+html {
+  background: url(/images/world-map-v1.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(
-    356deg,
-    rgba(255, 190, 183, 1) 23%,
-    rgba(171, 134, 167, 1) 80%
-  );
-  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 500;
+  margin: 40px 0px 15px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px 0px 50px;
 }
 
 footer {
   text-align: center;
 }
 
+select {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  width: 200px;
+  text-align-last: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border: none;
+}
+
+.cities-grid-bern {
+  display: grid;
+  padding: 25px 15px;
+  margin: 25px auto;
+  max-width: 320px;
+  border-radius: 20px;
+  background-image: url(https://tzassets.bestwestern.com/wp-content/uploads/2022/10/24211350/GettyImages-1155086988.jpg);
+  background-size: cover;
+}
+
+.cities-grid-london {
+  display: grid;
+  padding: 25px 15px;
+  margin: 25px auto;
+  max-width: 320px;
+  border-radius: 20px;
+  background-image: url(https://www.planet-wissen.de/kultur/metropolen/london/london-sehenswuerdigkeiten-100~_v-gseapremiumxl.jpg);
+  background-size: cover;
+}
+
+.cities-grid-johannesburg {
+  display: grid;
+  padding: 25px 15px;
+  margin: 25px auto;
+  max-width: 320px;
+  border-radius: 20px;
+  background-image: url(https://safaris-a-la-carte.com/thumb/ar__x/f__jpg/h__512/q__60/w__1280/zc__1/src/fichier/p_entete/11855/entete_img_afrique_du_sud_johannesburg_shutterstock_robyn_gwilt_211816030.jpg);
+  background-size: cover;
+}
+
+.cities-grid-washington {
+  display: grid;
+  padding: 25px 15px;
+  margin: 25px auto;
+  max-width: 320px;
+  border-radius: 20px;
+  background-image: url(https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2022/01/HERO-The-United-States-Capitol-building-at-twilight-wirth-reflection-in-water-Alamy-2BE892M-1.jpg);
+  background-size: cover;
+}
+
 .main-container {
   background-color: whitesmoke;
-  border-radius: 8px;
-  margin: 50px auto;
-  max-width: 600px;
+  border-radius: 40px;
+  margin: 60px auto 15px;
+  max-width: 500px;
   text-align: center;
-  padding: 20px;
+  padding: 15px 15px 80px 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.grid-item-city {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  justify-self: start;
+  padding-left: 10px;
+}
+
+.grid-item-date {
+  color: white;
+  font-size: 14px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  justify-self: start;
+  padding-left: 10px;
+}
+
+.grid-item-time {
+  color: white;
+  font-size: 35px;
+  font-weight: 800;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
 }
