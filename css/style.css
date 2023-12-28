@@ -26,6 +26,7 @@ footer {
 select {
   font-family: inherit;
   font-size: 16px;
+  font-weight: 500;
   padding: 5px 10px;
   border-radius: 8px;
   width: 200px;
@@ -43,6 +44,21 @@ select {
   border-radius: 20px;
   background-image: url(https://tzassets.bestwestern.com/wp-content/uploads/2022/10/24211350/GettyImages-1155086988.jpg);
   background-size: cover;
+  position: relative;
+  isolation: isolate;
+}
+
+.cities-grid-bern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(121, 96, 118, 0.6) 0%,
+    rgba(121, 96, 118, 0.1) 100%
+  );
 }
 
 .cities-grid-london {
@@ -53,6 +69,21 @@ select {
   border-radius: 20px;
   background-image: url(https://www.planet-wissen.de/kultur/metropolen/london/london-sehenswuerdigkeiten-100~_v-gseapremiumxl.jpg);
   background-size: cover;
+  position: relative;
+  isolation: isolate;
+}
+
+.cities-grid-london::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(121, 96, 118, 0.6) 0%,
+    rgba(121, 96, 118, 0.1) 100%
+  );
 }
 
 .cities-grid-johannesburg {
@@ -63,6 +94,21 @@ select {
   border-radius: 20px;
   background-image: url(https://safaris-a-la-carte.com/thumb/ar__x/f__jpg/h__512/q__60/w__1280/zc__1/src/fichier/p_entete/11855/entete_img_afrique_du_sud_johannesburg_shutterstock_robyn_gwilt_211816030.jpg);
   background-size: cover;
+  position: relative;
+  isolation: isolate;
+}
+
+.cities-grid-johannesburg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(121, 96, 118, 0.6) 0%,
+    rgba(121, 96, 118, 0.1) 100%
+  );
 }
 
 .cities-grid-washington {
@@ -73,13 +119,28 @@ select {
   border-radius: 20px;
   background-image: url(https://www.thetimes.co.uk/travel/wp-content/uploads/sites/6/2022/01/HERO-The-United-States-Capitol-building-at-twilight-wirth-reflection-in-water-Alamy-2BE892M-1.jpg);
   background-size: cover;
+  position: relative;
+  isolation: isolate;
+}
+
+.cities-grid-washington::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(121, 96, 118, 0.6) 0%,
+    rgba(121, 96, 118, 0.1) 100%
+  );
 }
 
 .main-container {
   background-color: whitesmoke;
   border-radius: 40px;
   margin: 60px auto 15px;
-  max-width: 500px;
+  max-width: 450px;
   text-align: center;
   padding: 15px 15px 80px 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
