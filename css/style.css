@@ -179,3 +179,13 @@ select {
   grid-row-end: 3;
   align-self: center;
 }
+
+@media (max-width: 767px) {
+  html {
+    background: linear-gradient(
+      90deg,
+      rgba(251, 216, 192, 1) 0%,
+      rgba(212, 179, 214, 1) 100%
+    );
+  }
+}
