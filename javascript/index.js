@@ -61,6 +61,7 @@ function updateSelectedCity(event) {
         <div class="grid-item-date">${cityDate.format("MMMM Do YYYY")}</div>
         <div class="grid-item-time">${cityDate.format("H:mm")}</div>
         </div>
+<a href = "index.html">Show all cities</a>
         `;
 }
 
