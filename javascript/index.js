@@ -1,14 +1,15 @@
-function showTime() {
+function showStandardTime() {
   let standardTimeElement = document.querySelector("h1");
   let standardTime = moment().tz("Europe/Zurich");
 
   standardTimeElement.innerHTML = standardTime.format("H:mm:ss");
+}
 
+function updateTime() {
   let bernElement = document.querySelector("#bern");
   let bernElementDate = bernElement.querySelector(".grid-item-date");
   let bernElementTime = bernElement.querySelector(".grid-item-time");
   let bernTime = moment().tz("Europe/Zurich");
-
   bernElementDate.innerHTML = bernTime.format("MMMM Do YYYY");
   bernElementTime.innerHTML = bernTime.format("H:mm");
 
@@ -41,5 +42,26 @@ function showTime() {
   washingtonElementTime.innerHTML = washingtonTime.format("H:mm");
 }
 
-showTime();
-setInterval(showTime, 1000);
+function updateSelectedCity(event) {
+  clearInterval(updateTimeInterval);
+
+  let cityTimeZone = event.target.value;
+  let cityName = event.target.selectedOptions[0].text;
+  let cityDate = moment().tz(cityTimeZone);
+  let cityElement = document.querySelector("#variable-city-element");
+
+  cityElement.innerHTML = `
+        <div class="cities-grid-bern" id="bern">
+        <div class="grid-item-city">${cityName}</div>
+        <div class="grid-item-date">${cityDate.format("MMMM Do YYYY")}</div>
+        <div class="grid-item-time">${cityDate.format("H:mm")}</div>
+        </div>
+        `;
+}
+
+let selectedCity = document.querySelector("#selected-city");
+selectedCity.addEventListener("change", updateSelectedCity);
+
+setInterval(showStandardTime, 1000);
+updateTime();
+let updateTimeInterval = setInterval(updateTime, 1000);
