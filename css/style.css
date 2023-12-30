@@ -39,7 +39,7 @@ select {
   border: none;
 }
 
-.cities-grid-bern {
+#bern {
   display: grid;
   padding: 25px 15px;
   margin: 25px auto;
@@ -51,7 +51,7 @@ select {
   isolation: isolate;
 }
 
-.cities-grid-bern::after {
+#bern::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -184,6 +184,10 @@ select {
   align-self: center;
 }
 
+.reset-link {
+  font-weight: 600;
+}
+
 @media (max-width: 767px) {
   html {
     background: linear-gradient(
@@ -196,6 +200,10 @@ select {
   .main-container {
     margin: 0 auto 15px;
     padding-bottom: 40px;
+  }
+
+  .reset-link {
+    font-size: 1.6rem;
   }
 }
 
