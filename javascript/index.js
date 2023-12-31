@@ -6,6 +6,9 @@ function showStandardTime() {
   standardTimeElement.innerHTML = standardTime.format("H:mm:ss");
 }
 
+showStandardTime();
+setInterval(showStandardTime, 1000);
+
 function updateTime() {
   let bernElement = document.querySelector("#bern");
   let bernElementDate = bernElement.querySelector(".grid-item-date");
@@ -43,23 +46,30 @@ function updateTime() {
   washingtonElementTime.innerHTML = washingtonTime.format("H:mm");
 }
 
+updateTime();
+let updateTimeInterval = setInterval(updateTime, 1000);
+
 function updateSelectedCity(event) {
   let cityElement = document.querySelector("#variable-city-element");
-  let cityTimeZone = event.target.value;
-
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
-
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityDate = moment().tz(cityTimeZone);
+  let cityName;
+  let cityDate;
+  let selectedCityInterval;
 
   function changeSelectedCityTime() {
+    let cityTimeZone = event.target.value;
+
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
+
+    cityDate = moment().tz(cityTimeZone);
+    cityName = cityTimeZone.replace("_", " ").split("/")[1];
+
     cityElement.innerHTML = `
           <div class="cities-grid-bern" id="bern">
           <div class="grid-item-city">${cityName}</div>
           <div class="grid-item-date">${cityDate.format("MMMM Do YYYY")}</div>
-          <div class="grid-item-time">${cityDate.format("H:mm")}</div>
+          <div class="grid-item-time">${cityDate.format("H:mm:ss")}</div>
           </div>
   <a href = "index.html" class="reset-link";>Back to all cities</a>
           `;
@@ -97,13 +107,10 @@ function updateSelectedCity(event) {
     }
   }
   clearInterval(updateTimeInterval);
+  clearInterval(selectedCityInterval);
   changeSelectedCityTime();
+  selectedCityInterval = setInterval(changeSelectedCityTime, 1000);
 }
 
 let selectedCity = document.querySelector("#selected-city");
 selectedCity.addEventListener("change", updateSelectedCity);
-
-showStandardTime();
-setInterval(showStandardTime, 1000);
-updateTime();
-let updateTimeInterval = setInterval(updateTime, 1000);
